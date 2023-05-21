@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>WELCOME</title>
+<style>
+	 .container {
+	 background-color: rgb(0, 0, 0);
+	 width: 500px;
+	 height: 500px;
+	 display: inline-block;
+	 } 
+
+	input{
+		width: 200px;
+		height: 44px;
+		border-radius: 5px;
+		border-color: "black";
+		margin: 10px;
+	}
+	
+	button{
+		width: 100px;
+		height: 34px;
+		margin: 10px;
+		background-color: rgb(120,1,255);
+	}
+
+	nav{
+		margin: 10px;
+		background-color: aqua;
+	}
+</style>
+</head>
+<body>
+	<nav>
+        <li><a href="http://localhost:8080/">HOME</a></li>
+    </nav>
+	<div class="container">
+		<form method="post" action="http://localhost:8080/">
+		<input type="number" id="zip_code" placeholder="zip code" name="zip_code"><br>
+		<input type="text" placeholder="branch Name" name="branch"><br>
+		<button type="submit" id="btn">Submit</button>
+		</form>
+	</div>
+	
+	<script>
+		let inp = document.getElementById("zip_code");
+		let btn1 = document.getElementById("btn");
+		console.log(btn1);
+
+		inp.addEventListener("keyup", (btn)=>{
+			let val = inp.value;
+			console.log(val);
+			let len1 = val.toString().length;
+			if(len1 != 6){
+				inp.style.borderColor = "red";
+				btn1.style.display = "none";
+			}else{
+				inp.style.borderColor = "green";
+				btn1.style.display = "block";
+			}
+			
+		});
+	</script>
+</body>
+</html>

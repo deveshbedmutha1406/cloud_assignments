@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    <form action="http://localhost:8080/" method="post">
+
+        <input type="text" name="name" id="name" placeholder="university name">
+        <button type="submit">Submit</button>
+
+    </form>
+
+
+    {%for ele in data%}
+    <h2>Name: {{ele.name}}</h2>
+    <h3>Country: {{ele.country}}</h3>
+    <h3>Code: {{ele.aplha_two_code}}</h3>
+    <h3>url: {{ele.web_pages}}</h3>
+    <h1>space</h1>
+    {% endfor %}
+</body>
+</html>
